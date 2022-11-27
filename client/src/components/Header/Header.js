@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom' 
 import './headerStyle.scss'
 import images from '../../assets/img'
@@ -6,40 +6,62 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faClose, faMoon, faBars} from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
-  return (
-    <header className='header' id='header'>
+    const [showMenu, setShowMenu] = useState(false)
+    const navItem = [
+        {to: '/', name: 'home'},
+        {to: '/', name: 'about us'},
+        {to: '/', name: 'popular'},
+        {to: '/', name: 'recently'},
+    ]
+    const handleShowMenu = () => {
+        setShowMenu(true)
+    } 
+
+    const handleCloseMenu = () => {
+        setShowMenu(false)
+    } 
+
+    useEffect(() => {
+        const handleScrollHeader = () => {
+          const header = document.getElementById('header')
+          window.scrollY >=50 ? header.classList.add('bg-header'):header.classList.remove('bg-header')
+        };
+        window.addEventListener('scroll', handleScrollHeader);
+        // clean up
+        return () => {
+          window.removeEventListener('scroll', handleScrollHeader);
+        };
+      }, []);
+
+    return (
+    <header className='header' id='header' >
         <nav className='nav wide'>
             <Link to='/' className='nav__logo'>
                 <img src={images.logo}/>
                 <h2 className='nav__heading'>sushi</h2>
             </Link>
-            <div className='nav__menu'>
+            <div className={`nav__menu ${showMenu ? 'show--menu':''}`}>
                 <ul className='nav__list'>
-                    <li className='nav__item'>
-                    <Link to='/' className='nav__link'>home</Link>
-                    </li>
-                    <li className='nav__item'>
-                    <Link to='/' className='nav__link'>about us</Link>
-                    </li>
-                    <li className='nav__item'>
-                    <Link to='/' className='nav__link'>popular</Link>
-                    </li>
-                    <li className='nav__item'>
-                    <Link to='/' className='nav__link'>recently</Link>
-                    </li>
+                    {
+                        navItem.map((item, index) => 
+                            <li className='nav__item' key={index} onClick={handleCloseMenu}>
+                                <Link to={item.to} className='nav__link'>{item.name}</Link>
+                            </li>
+                        )
+                    }
                 </ul>
                 {/* close button */}
-                <div className="nav__close" id="nav-close">
+                <div className="nav__close" id="nav-close" onClick={handleCloseMenu}>
                     <FontAwesomeIcon icon={faClose}/>
                 </div>
-                <img src={images.nav_img_1} alt="nav  image" className='nav__img1'/>
-                <img src={images.nav_img_2} alt="nav  image" className='nav__img2'/>
+                <img src={images.leafBranch1} alt="nav  image" className='nav__img1'/>
+                <img src={images.leafBranch2} alt="nav  image" className='nav__img2'/>
             </div>
-            <div className="nav__buttons">
+            <div className="nav__buttons" >
                 {/* theme change button */}
                 {/* <FontAwesomeIcon icon={faMoon} className='change-theme' id='theme-button'/> */}
                 {/* toggle button */}
-                <div className="nav__tonggle" id='nav-toggle'>
+                <div className="nav__tonggle" onClick={handleShowMenu}>
                     <FontAwesomeIcon icon={faBars}/>
                 </div>
             </div>

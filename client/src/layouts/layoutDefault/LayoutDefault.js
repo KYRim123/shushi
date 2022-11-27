@@ -6,9 +6,9 @@ function LayoutDefault({children}) {
   return (
     <Fragment>
       <Header />
-      <div className='main'>
-        {children}
-      </div>
+        <main className='main'>
+          {children}
+        </main>
     </Fragment>
   )
 }
