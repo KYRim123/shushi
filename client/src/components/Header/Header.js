@@ -31,7 +31,7 @@ function Header() {
         return () => {
           window.removeEventListener('scroll', handleScrollHeader);
         };
-      }, []);
+      }, []); 
 
     return (
     <header className='header' id='header' >

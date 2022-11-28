@@ -6,8 +6,8 @@
   }
 // =================mobile================  
 @media screen and (max-width: 742px) {
-    .nav {
-        padding: 0 1rem;
+    .nav, .main {
+        padding: 0 2rem;
     }
     .nav__menu {
         position: fixed;
