@@ -11,5 +11,13 @@ const images = {
     popularOnigiri: require('./popular-onigiri.png'),
     popularSpringRols: require('./popular-spring-rols.png'),
     popularSushiRolls: require('./popular-sushi-rolls.png'),
+    spinachLeaf: require('./spinach-leaf.png'),
+    recentlySalmonSushi: require('./recently-salmon-sushi.png'),
+    newsletterSushi: require('./newsletter-sushi.png'),
+    springOnion: require('./spring-onion.png'),
+    footerCard1: require('./footer-card-1.png'),
+    footerCard2: require('./footer-card-2.png'),
+    footerCard3: require('./footer-card-3.png'),
+    footerCard4: require('./footer-card-4.png'),
 }
 export default images

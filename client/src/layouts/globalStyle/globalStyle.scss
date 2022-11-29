@@ -88,3 +88,25 @@ img {
     width: 100%;
     margin: 0 auto;
 }
+//button
+.button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--first-color);
+    padding: 1rem 1.5em;
+    border-radius: 4rem;
+    color: #fff;
+    font-weight: var(--font-medium);
+    transition: all .4s;
+    .icon {
+        font-size: 1.5rem;
+        transition: transform .3s;
+    }
+    &:hover {
+        background-color: var(--first-color-alt);
+        .icon {
+            transform: translateX(.25rem);
+        }
+    }
+}
