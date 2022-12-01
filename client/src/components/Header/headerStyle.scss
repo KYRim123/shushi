@@ -35,11 +35,20 @@
             }
         }
     }
-    .nav__toggle {
-        font-size: 1.25rem;
-        cursor: pointer;
+    .nav__buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+        .nav__toggle {
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+        .change-theme {
+           cursor: pointer;
+           color: var(--title-color);
+        }
     }
-    .nav__menu {
+        .nav__menu {
         z-index: 1000;
         .nav__list {
             display: flex;

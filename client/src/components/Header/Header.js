@@ -33,6 +33,10 @@ function Header() {
         };
       }, []); 
 
+      const handleChangeTheme = () => {
+        document.body.classList.toggle('dark--theme')
+      }
+
     return (
     <header className='header' id='header' >
         <nav className='nav wide'>
@@ -59,7 +63,7 @@ function Header() {
             </div>
             <div className="nav__buttons" >
                 {/* theme change button */}
-                {/* <FontAwesomeIcon icon={faMoon} className='change-theme' id='theme-button'/> */}
+                <FontAwesomeIcon icon={faMoon} onClick={handleChangeTheme} className='change-theme' id='theme-button'/>
                 {/* toggle button */}
                 <div className="nav__tonggle" onClick={handleShowMenu}>
                     <FontAwesomeIcon icon={faBars}/>

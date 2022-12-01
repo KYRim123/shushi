@@ -1,0 +1,22 @@
+.scrollUp {
+    position: fixed;
+    bottom: -50%;
+    right: 2rem;
+    z-index: var(--z-tooltip);
+    .scrollUp__container {
+        border-radius: .25rem;
+        background-color: white;
+        box-shadow: 0 8px 10px rgb(123, 120, 120);
+        padding: 1rem;
+        color: var(--first-color);
+        transition: all .3s;
+        cursor: pointer;
+        &:hover {
+            transform: translateY(-.25rem);
+            box-shadow:  8px 0px 10px rgb(123, 120, 120);
+        }
+    }
+}
+.show__scroll {
+    bottom: 4rem;
+}

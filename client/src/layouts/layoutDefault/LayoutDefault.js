@@ -1,15 +1,16 @@
-import { Fragment } from 'react'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import './layoutDefaultStyle.scss'
 
 function LayoutDefault({children}) {
   return (
-    <Fragment>
+    <article className='wrapper'>
       <Header />
         <main className='main'>
           {children}
         </main>
-    </Fragment>
+      <Footer />  
+    </article>
   )
 }
 

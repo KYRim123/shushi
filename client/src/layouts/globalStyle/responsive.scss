@@ -1,12 +1,9 @@
 // ===============pc==============
 @media screen and (min-width: 1024px) {
-    :root {
-      
-    }
   }
 // =================mobile================  
 @media screen and (max-width: 742px) {
-    .nav, .main {
+    .nav, .main, .footer {
         padding: 0 2rem;
     }
     .nav__menu {
