@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom'
 import './headerStyle.scss'
 import images from '../../assets/img'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faClose, faMoon, faBars} from '@fortawesome/free-solid-svg-icons'
+import {faClose, faMoon, faBars, faSun} from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
     const [showMenu, setShowMenu] = useState(false)
+    const [iconTheme, setIconTheme] = useState(faMoon)
     const navItem = [
         {to: '/', name: 'home'},
         {to: '/', name: 'about us'},
@@ -35,6 +36,7 @@ function Header() {
 
       const handleChangeTheme = () => {
         document.body.classList.toggle('dark--theme')
+        document.body.classList.contains('dark--theme')?setIconTheme(faSun):setIconTheme(faMoon)
       }
 
     return (
@@ -63,7 +65,7 @@ function Header() {
             </div>
             <div className="nav__buttons" >
                 {/* theme change button */}
-                <FontAwesomeIcon icon={faMoon} onClick={handleChangeTheme} className='change-theme' id='theme-button'/>
+                <FontAwesomeIcon icon={iconTheme} onClick={handleChangeTheme} className='change-theme' id='theme-button'/>
                 {/* toggle button */}
                 <div className="nav__tonggle" onClick={handleShowMenu}>
                     <FontAwesomeIcon icon={faBars}/>
