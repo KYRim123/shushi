@@ -21,7 +21,7 @@ function Header() {
     const handleCloseMenu = () => {
         setShowMenu(false)
     } 
-
+    //scroll add box shadow for header
     useEffect(() => {
         const handleScrollHeader = () => {
           const header = document.getElementById('header')
@@ -43,7 +43,7 @@ function Header() {
     <header className='header' id='header' >
         <nav className='nav wide'>
             <Link to='/' className='nav__logo'>
-                <img src={images.logo}/>
+                <img src={images.logo} alt='logo'/>
                 <h2 className='nav__heading'>sushi</h2>
             </Link>
             <div className={`nav__menu ${showMenu ? 'show--menu':''}`}>
@@ -60,8 +60,8 @@ function Header() {
                 <div className="nav__close" id="nav-close" onClick={handleCloseMenu}>
                     <FontAwesomeIcon icon={faClose}/>
                 </div>
-                <img src={images.leafBranch1} alt="nav  image" className='nav__img1'/>
-                <img src={images.leafBranch2} alt="nav  image" className='nav__img2'/>
+                <img src={images.leafBranch1} alt="navimage" className='nav__img1'/>
+                <img src={images.leafBranch2} alt="navimage" className='nav__img2'/>
             </div>
             <div className="nav__buttons" >
                 {/* theme change button */}

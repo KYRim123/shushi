@@ -11,6 +11,7 @@ function Home() {
     { name: 'Onigiri',img: images.popularOnigiri, des: 'Japanese Dish', price: '$10.99' },
     { name: 'Spring Rolls',img: images.popularSpringRols, des: 'Japanese Dish', price: '$15.99' },
     { name: 'Sushi Rolls',img: images.popularSushiRolls, des: 'Japanese Dish', price: '$19.99' },
+    { name: 'Sushi Rolls',img: images.popularSpringRols, des: 'Japanese Dish', price: '$19.99' },
   ]
  
   return (

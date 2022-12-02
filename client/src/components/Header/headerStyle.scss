@@ -20,6 +20,7 @@
         color: var(--title-color);
     }
     .nav__logo {
+        flex: 1;
         align-items: center;
         column-gap: .5rem;
         font-family: var(--title-font);
@@ -48,13 +49,11 @@
            color: var(--title-color);
         }
     }
-        .nav__menu {
+    .nav__menu {
         z-index: 1000;
         .nav__list {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            row-gap: 2rem;
+            justify-content: space-between;
         }
         .nav__link {
             color: var(--title-color);

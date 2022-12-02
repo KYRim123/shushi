@@ -1,8 +1,16 @@
-// ===============pc==============
-@media screen and (min-width: 1024px) {
-  }
+
 // =================mobile================  
 @media screen and (max-width: 742px) {
+
+}
+// ===============mobile & tablet ===============
+@media screen and (max-width: 1023px) {
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+    }
     .nav, .main, .footer {
         padding: 0 2rem;
     }
@@ -10,10 +18,91 @@
         position: fixed;
         top: -100%;
         left: 0;
+        right: 0;
         background-color: var(--body-color);
-        width: 100%;
-        box-shadow: 0 8px 20px hsla(19, 64%, 24%, .1);
+        box-shadow: 0 8px 20px rgb(165, 164, 164);
         transition: top .4s;
         padding: 5rem 0;
+    }
+    .popular {
+        .popular__container {
+            grid-template-columns: 250px;
+        }
+    }
+}
+// ===============tablet==============
+@media screen and (min-width: 743px) and (max-width: 1023px) {
+    .footer {
+        text-align: center;
+        .footer__container {
+            font-size: var(--normal-font-size);
+            --small-font-size: 1.6rem;
+        }
+    }
+}
+// ===============pc==============
+@media screen and (min-width: 1024px) {
+    .header {
+        padding: 1rem;
+    }
+    .nav {
+        img {
+            display: none;
+        }
+    }
+    .nav__tonggle{
+        display: none;
+    }
+    .nav__menu {
+        margin-right: 2rem;
+        .nav__close {
+            display: none;
+        }
+        .nav__list {
+            column-gap: 2rem;
+        }
+    }
+    .home {
+        padding-top: 7rem;
+
+    }
+    .home__container {
+        grid-template-columns: 48rem 50rem;
+        .home__data {
+            order: -1;
+            text-align: initial;
+        }
+        .home__img {
+            width: 60rem;
+        }
+    }
+    .about__container {
+        margin-top: 5rem;
+        grid-template-columns: 45rem 36rem;
+        align-items: center;
+        column-gap: 7rem;
+        .about__data {
+            order: 1;
+        }
+        .about__title {
+            div {
+                justify-content: normal !important;
+            }
+        }
+        .section__title,
+        .section__subtitle,
+        .about__description{
+            text-align: initial;
+        }
+    }
+    .footer {
+        --small-font-size: 1.2rem;
+        .footer__container {
+            grid-template-columns: auto auto;
+            .footer__content{
+                grid-template-columns: auto auto auto;
+
+            }
+        }
     }
 }

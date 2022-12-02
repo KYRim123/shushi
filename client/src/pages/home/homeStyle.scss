@@ -89,7 +89,7 @@
 
     .popular__container{
         padding-top: 4rem;
-        grid-template-columns: 250px;
+        grid-template-columns: 250px 250px 250px;
         justify-content: center;
         row-gap: 5.5rem;
         .popular__card {
@@ -207,6 +207,7 @@
             left: -40%;
         }
         .newsletter__data {
+            z-index: 1;
             .section__title {
                 color: #fff;
             }
