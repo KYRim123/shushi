@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './headerStyle.scss'
 import images from '../../assets/img'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClose, faMoon, faBars, faSun} from '@fortawesome/free-solid-svg-icons'
+import { faClose, faMoon, faBars, faSun } from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
     const [showMenu, setShowMenu] = useState(false)
     const [iconTheme, setIconTheme] = useState(faMoon)
-    const [currentTheme, setCurrentTheme] = useState(false)
+    const [reload, setReload] = useState(false)
     const navItem = [
         { to: '/', name: 'home' },
         { to: '/', name: 'about us' },
@@ -23,32 +23,35 @@ function Header() {
         setShowMenu(false)
     }
     //scroll add box shadow for header
+    const handleScrollHeader = () => {
+        const header = document.getElementById('header')
+        window.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header')
+    };
     useEffect(() => {
-        const handleScrollHeader = () => {
-            const header = document.getElementById('header')
-            window.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header')
-        };
         window.addEventListener('scroll', handleScrollHeader);
         // clean up
         return () => {
             window.removeEventListener('scroll', handleScrollHeader);
         };
     }, []);
-    //get theme from local Storage
+    
+    // //get theme from local Storage
     useEffect(() => {
-        const theme = JSON.parse(localStorage.getItem('selected-theme'))
-        setCurrentTheme(theme)
-        theme ? document.body.classList.add('dark--theme'):document.body.classList.remove('dark--theme')
-    },[iconTheme])
-    //handle change theme 
-    const handleChangeTheme = () => {
-        document.body.classList.toggle('dark--theme')
-        document.body.classList.contains('dark--theme') ? setIconTheme(faSun) : setIconTheme(faMoon)
-        currentTheme ? 
-        localStorage.setItem('selected-theme', JSON.stringify(false)):
-        localStorage.setItem('selected-theme', JSON.stringify(true))
-    }
+        const themeLocal = JSON.parse(localStorage.getItem("select-theme")) || iconTheme
+        setIconTheme(themeLocal)
+        themeLocal.iconName === "sun" ? document.body.classList.add("dark--theme"):
+        document.body.classList.remove("dark--theme")
+      }, [reload])
 
+    // //handle change theme 
+      const handleChangeTheme =() => {
+        let currentIcon;  
+        iconTheme.iconName === "moon" ? currentIcon = faSun : currentIcon = faMoon
+        localStorage.setItem("select-theme", JSON.stringify(currentIcon))
+        setReload(!reload)
+      }
+
+      
     return (
         <header className='header' id='header' >
             <nav className='nav wide'>
