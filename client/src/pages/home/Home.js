@@ -17,7 +17,7 @@ function Home() {
   return (
     <>
       {/* ==================Home======================= */}
-      <section className='home wide' >
+      <section id='home' className='home wide' >
         <div className="home__container grid">
           <img src={images.homeImg} alt="home" className="home__img" />
           <div className="home__data">
@@ -42,7 +42,7 @@ function Home() {
         <img src={images.leafBranch4} alt="nav" className='home__leaf2' />
       </section>
       {/* ==================About======================= */}
-      <section className='about wide'>
+      <section id='about' className='about wide'>
         <div className="about__container grid">
           <div className="about__data">
             <span className="section__subtitle">about us</span>
@@ -66,7 +66,7 @@ function Home() {
         <img src={images.leafBranch1} alt="leaf1" className='about__leaf' />
       </section>
       {/* ==================Popular======================= */}
-      <section className='popular wide'>
+      <section id='popular' className='popular wide'>
         <span className="section__subtitle">The Best Food</span>
         <h2 className="section__title">Popular Dishes</h2>
         <div className="popular__container grid">
@@ -88,7 +88,7 @@ function Home() {
         </div>
       </section>
       {/* ==================Recently======================= */}
-      <section className="recently wide">
+      <section id='recently' className="recently wide">
         <div className="recently__container grid">
           <div className="recently__data">
             <span className="section__subtitle">Recently Added</span>

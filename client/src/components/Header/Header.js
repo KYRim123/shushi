@@ -10,10 +10,10 @@ function Header() {
     const [iconTheme, setIconTheme] = useState(faMoon)
     const [reload, setReload] = useState(false)
     const navItem = [
-        { to: '/', name: 'home' },
-        { to: '/', name: 'about us' },
-        { to: '/', name: 'popular' },
-        { to: '/', name: 'recently' },
+        { to: '#home', name: 'home' },
+        { to: '#about', name: 'about us' },
+        { to: '#popular', name: 'popular' },
+        { to: '#recently', name: 'recently' },
     ]
     const handleShowMenu = () => {
         setShowMenu(true)
@@ -64,7 +64,7 @@ function Header() {
                         {
                             navItem.map((item, index) =>
                                 <li className='nav__item' key={index} onClick={handleCloseMenu}>
-                                    <Link to={item.to} className='nav__link'>{item.name}</Link>
+                                    <a href={item.to} className='nav__link'>{item.name}</a>
                                 </li>
                             )
                         }
